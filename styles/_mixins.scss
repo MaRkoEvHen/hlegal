@@ -1,0 +1,26 @@
+@mixin flex($ai:center, $jc:center, $g:0, $fd:row){
+    display: flex;
+    align-items: $ai;
+    justify-content: $jc;
+    gap: $g;
+    flex-direction: $fd;
+}
+
+$breakpoints:(
+    "mobile": 480px,
+    "tablet": 768px,
+    "laptop": 1024px,
+    "desktop": 1440px
+);
+
+@mixin media($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media (max-width: map-get($breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $size) {
+      @content;
+    }
+  }
+}

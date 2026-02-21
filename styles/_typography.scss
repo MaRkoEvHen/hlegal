@@ -1,0 +1,80 @@
+@use 'fonts';
+@use 'colors';
+
+.hero {
+   font-family: fonts.$font-name;
+   font-weight: fonts.$weight-bold;
+   font-size: 38px;
+   line-height: normal;
+   background: colors.$grad-red-text;
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+h2 {
+   color: colors.$main-reg;
+   font-family: fonts.$font-name;
+   font-size: 30px;
+   font-weight: fonts.$weight-bold;
+   line-height: normal;
+}
+
+h3 {
+   color: colors.$main-reg;
+   font-family: fonts.$font-name;
+   font-size: 22px;
+   font-weight: fonts.$weight-bold;
+   line-height: normal;
+}
+
+.caps {
+   color: colors.$main-reg;
+   font-family: fonts.$font-name;
+   font-size: 14px;
+   font-weight: fonts.$weight-bold;
+   line-height: normal;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+}
+
+h4 {
+   color: colors.$main-reg;
+   font-family: fonts.$font-name;
+   font-size: 16px;
+   font-weight: fonts.$weight-bold;
+   line-height: normal;
+}
+
+p {
+   color: #000;
+   font-family: fonts.$font-name;
+   font-size: 16px;
+   font-weight: fonts.$weight-reg;
+   line-height: 26px;
+}
+
+ul,
+ol {
+   color: #000;
+   font-family: fonts.$font-name;
+   font-size: 18px;
+   font-weight: fonts.$weight-reg;
+   line-height: 26px;
+
+   li {
+      &::marker {
+         color: colors.$accent;
+      }
+   }
+}
+a{
+color: colors.$active-reg;
+font-family: fonts.$font-name;
+font-size: 16px;
+font-weight: fonts.$weight-reg;
+line-height: 20px;
+   &:hover{
+   color: colors.$accent;
+   }
+}
