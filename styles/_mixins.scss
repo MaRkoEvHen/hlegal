@@ -7,10 +7,12 @@
 }
 
 $breakpoints:(
-    "mobile": 480px,
-    "tablet": 768px,
-    "laptop": 1024px,
-    "desktop": 1440px
+    "mobile": 375px,
+    "tabletsd": 768px,
+    "tablethd": 1024px,
+    "desktopsd": 1440px,
+    "desktophd": 1920px
+
 );
 
 @mixin media($size) {
@@ -24,3 +26,22 @@ $breakpoints:(
     }
   }
 }
+
+
+@mixin font-face ($path, $weigth: 400 ) {
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('../fonts/#{$path}.woff2') format('woff2'), 
+             url('../fonts/#{$path}.woff') format('woff');
+
+        font-weight: $weigth;
+        font-style: normal;
+    }
+}
+
+@include font-face('Montserrat-Regular');
+@include font-face('Montserrat-Bold',700);
+
+$font-name: 'Montserrat';
+$weight-reg: 400;
+$weight-bold: 700;
