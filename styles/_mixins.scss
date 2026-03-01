@@ -36,12 +36,12 @@ $breakpoints:(
 
         font-weight: $weigth;
         font-style: normal;
+        font-display: swap
     }
 }
 
 @include font-face('Montserrat-Regular');
 @include font-face('Montserrat-Bold',700);
-
 $font-name: 'Montserrat';
 $weight-reg: 400;
 $weight-bold: 700;
