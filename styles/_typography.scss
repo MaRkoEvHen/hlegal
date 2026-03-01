@@ -1,80 +1,61 @@
 @use 'colors';
 @use 'mixins';
 
+@include mixins.font-style($path: 'Montserrat-Regular', $weight: 400);
+@include mixins.font-style($path: 'Montserrat-Bold', $weight: 700);
+
 .hero {
-   font-family: mixins.$font-name;
-   font-weight: mixins.$weight-bold;
-   font-size: 38px;
-   line-height: normal;
+   @include mixins.font-style(38px, 700);
    background: colors.$grad-red-text;
-   background-clip: text;
    -webkit-background-clip: text;
+   background-clip: text;
    -webkit-text-fill-color: transparent;
 }
 
 h2 {
+   @include mixins.font-style(30px, 700);
    color: colors.$main-reg;
-   font-family: mixins.$font-name;
-   font-size: 30px;
-   font-weight: mixins.$weight-bold;
-   line-height: normal;
 }
 
 h3 {
+   @include mixins.font-style(22px, 700);
    color: colors.$main-reg;
-   font-family: mixins.$font-name;
-   font-size: 22px;
-   font-weight: mixins.$weight-bold;
-   line-height: normal;
 }
 
 .caps {
+   @include mixins.font-style(14px, 700);
    color: colors.$main-reg;
-   font-family: mixins.$font-name;
-   font-size: 14px;
-   font-weight: mixins.$weight-bold;
-   line-height: normal;
    letter-spacing: 1px;
    text-transform: uppercase;
 }
 
 h4 {
+   @include mixins.font-style(16px, 700);
    color: colors.$main-reg;
-   font-family: mixins.$font-name;
-   font-size: 16px;
-   font-weight: mixins.$weight-bold;
-   line-height: normal;
 }
 
 p {
+   @include mixins.font-style(16px, 400, 26px);
    color: #000;
-   font-family: mixins.$font-name;
-   font-size: 16px;
-   font-weight: mixins.$weight-reg;
-   line-height: 26px;
 }
 
 ul,
 ol {
+   @include mixins.font-style(18px, 400, 26px);
    color: #000;
-   font-family: mixins.$font-name;
-   font-size: 18px;
-   font-weight: mixins.$weight-reg;
-   line-height: 26px;
 
-   li {
-      &::marker {
-         color: colors.$accent;
-      }
+   li::marker {
+      color: colors.$accent;
    }
 }
-a{
-color: colors.$active-reg;
-font-family: mixins.$font-name;
-font-size: 16px;
-font-weight: mixins.$weight-reg;
-line-height: 20px;
-   &:hover{
-   color: colors.$accent;
+
+a {
+   @include mixins.font-style(16px, 400, 20px);
+   color: colors.$active-reg;
+   text-decoration: none;
+   transition: color 0.3s ease;
+
+   &:hover {
+      color: colors.$accent;
    }
 }

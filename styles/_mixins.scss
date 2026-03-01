@@ -1,18 +1,17 @@
-@mixin flex($ai:center, $jc:center, $g:0, $fd:row){
-    display: flex;
-    align-items: $ai;
-    justify-content: $jc;
-    gap: $g;
-    flex-direction: $fd;
+@mixin flex($ai: center, $jc: center, $g: 0, $fd: row) {
+  display: flex;
+  align-items: $ai;
+  justify-content: $jc;
+  gap: $g;
+  flex-direction: $fd;
 }
 
-$breakpoints:(
-    "mobile": 375px,
-    "tabletsd": 768px,
-    "tablethd": 1024px,
-    "desktopsd": 1440px,
-    "desktophd": 1920px
-
+$breakpoints: (
+  "mobile": 375px,
+  "tabletsd": 768px,
+  "tablethd": 1024px,
+  "desktopsd": 1440px,
+  "desktophd": 1920px
 );
 
 @mixin media($size) {
@@ -20,7 +19,9 @@ $breakpoints:(
     @media (max-width: map-get($breakpoints, $size)) {
       @content;
     }
-  } @else {
+  }
+
+  @else {
     @media (max-width: $size) {
       @content;
     }
@@ -28,20 +29,22 @@ $breakpoints:(
 }
 
 
-@mixin font-face ($path, $weigth: 400 ) {
+@mixin font-style ($size: 16px, $weight: 400, $line: normal, $path: null) {
+  @if $path {
     @font-face {
-        font-family: 'Montserrat';
-        src: url('../fonts/#{$path}.woff2') format('woff2'), 
-             url('../fonts/#{$path}.woff') format('woff');
+      font-family: 'Montserrat';
+      src: url('../fonts/#{$path}.woff2') format('woff2'),
+      url('../fonts/#{$path}.woff') format('woff');
 
-        font-weight: $weigth;
-        font-style: normal;
-        font-display: swap
+      font-weight: $weight;
+      font-style: normal;
+      font-display: swap;
     }
+  } @else{
+  font-family: 'Montserrat',
+  sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line;
+  }
 }
-
-@include font-face('Montserrat-Regular');
-@include font-face('Montserrat-Bold',700);
-$font-name: 'Montserrat';
-$weight-reg: 400;
-$weight-bold: 700;

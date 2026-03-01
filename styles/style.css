@@ -13,65 +13,65 @@
   font-display: swap;
 }
 .hero {
-  font-family: "Montserrat";
-  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
   font-size: 38px;
+  font-weight: 700;
   line-height: normal;
   background: linear-gradient(90deg, #F0145A 0.84%, #EF8080 99.96%);
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 h2 {
-  color: #323264;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: normal;
+  color: #323264;
 }
 
 h3 {
-  color: #323264;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-size: 22px;
   font-weight: 700;
   line-height: normal;
+  color: #323264;
 }
 
 .caps {
-  color: #323264;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 700;
   line-height: normal;
+  color: #323264;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 h4 {
-  color: #323264;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: normal;
+  color: #323264;
 }
 
 p {
-  color: #000;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 26px;
+  color: #000;
 }
 
 ul,
 ol {
-  color: #000;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 26px;
+  color: #000;
 }
 ul li::marker,
 ol li::marker {
@@ -79,11 +79,13 @@ ol li::marker {
 }
 
 a {
-  color: #24A3FF;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
+  color: #24A3FF;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 a:hover {
   color: #F0145A;
