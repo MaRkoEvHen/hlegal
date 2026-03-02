@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @mixin flex($ai: center, $jc: center, $g: 0, $fd: row) {
   display: flex;
   align-items: $ai;
@@ -15,19 +17,18 @@ $breakpoints: (
 );
 
 @mixin media($size) {
-  @if map-has-key($breakpoints, $size) {
-    @media (max-width: map-get($breakpoints, $size)) {
+  @if map.has-key($breakpoints, $size) {
+    $width: map.get($breakpoints, $size);
+    
+    @media (min-width: $width) {
       @content;
     }
-  }
-
-  @else {
-    @media (max-width: $size) {
+  } @else {
+    @media (min-width: $size) {
       @content;
     }
   }
 }
-
 
 @mixin font-style ($size: 16px, $weight: 400, $line: normal, $path: null) {
   @if $path {

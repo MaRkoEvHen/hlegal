@@ -1,0 +1,144 @@
+@use 'colors';
+@use 'mixins' as *;
+@use 'typography';
+
+.header {
+    position: relative;
+    z-index: 1;
+    @include flex(stretch, flex-start, 0, column);
+    background: colors.$grad-supersoft;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+
+        background-image: url('../images/Symbol.svg');
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: auto 600px;
+
+        @include media("tabletsd") {
+            background-size: auto 1024px;
+        }
+
+        @include media("tablethd") {
+            background-size: auto 768px;
+        }
+
+        @include media ("desktopsd") {
+            background-size: auto 799px;
+        }
+
+        @include media ("desktophd") {
+            background-size: auto 1000px;
+        }
+
+    }
+
+
+    &__top {
+        position: relative;
+        z-index: 1;
+        padding: 10px 15px;
+        background: rgba(245, 245, 250, 0.20);
+        @include flex(center, space-between);
+    }
+
+    &__lang {
+        @include flex(center, flex-start, 0);
+    }
+
+    &__lang-btn {
+        background: transparent;
+        padding: 5px 7px;
+        border-radius: 8px;
+        color: #fff;
+        @include font-style(12px, 700);
+
+        &--active {
+            background: colors.$accent;
+        }
+    }
+
+    &__phone {
+        @include flex(center, flex-start, 0);
+    }
+
+    &__link {
+        @include font-style(16px, 700);
+        transition: color 0.3s ease;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    &__down {
+        position: relative;
+        z-index: 1;
+        padding: 15px 15px 10px;
+        @include flex(center, space-between);
+    }
+
+    &__logo {
+        @include flex(center, flex-start, 4px);
+
+        &-svg {
+            display: block;
+            margin: 0;
+            width: 70px;
+        }
+    }
+
+    &__decoration {
+        @include flex(center, flex-start, 0);
+
+        &-svg {
+            display: block;
+            margin: 0;
+            width: 12px;
+        }
+    }
+
+    &__pages-title {
+        color: #fff;
+        @include font-style(20px, 400)
+    }
+
+    &__burger {
+        @include flex(center, flex-start, 0);
+
+        &-btn {
+            border-radius: 8px;
+            background: none;
+            cursor: pointer;
+
+            &:active {
+                background-color: colors.$gray-separator;
+            }
+        }
+
+    }
+
+    &__hero {
+        position: relative;
+        z-index: 1;
+        margin-top: 130px;
+        @include flex(center, center, 0, column);
+    }
+
+    &__title {
+        @include font-style(40px, 700);
+        color: #fff;
+        text-align: center;
+    }
+
+    &__scroll {
+        margin: 160px 0 11px 0;
+    }
+}

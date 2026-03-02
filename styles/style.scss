@@ -1,6 +1,8 @@
 @use 'colors';
-@use 'mixins';
+@use 'mixins' as *;
 @use 'typography';
+@use 'header';
+@use 'footer';
 
 
 * {
@@ -10,3 +12,8 @@
     border: none;
     box-sizing: border-box;
 }
+
+.wrapper {
+    @include flex(stretch, flex-start, 0, column);
+}
+
