@@ -15,5 +15,51 @@
 
 .wrapper {
     @include flex(stretch, flex-start, 0, column);
+    background: colors.$grad-supersoft;
 }
 
+.main{
+        position: relative;
+        z-index: 2;
+        padding: 30px 0 60px 30px;
+        ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+        &__menu{
+        padding-bottom: 30px ;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar {display: none;}
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+        background-size: calc(100% - 30px) 4px;
+        background-position: 0 100%;
+        background-repeat: no-repeat; 
+    }
+    &__scroll{
+        @include flex(center, flex-start, 30px);
+        @include font-style(30px, 700);
+        white-space: nowrap; 
+        display: inline-flex; 
+        padding: 0 30px 15px 0;
+        list-style: none;
+        margin: 0;
+        color: colors.$gray-text;
+    }
+    &__scroll-item {
+        cursor: pointer;
+        position: relative;
+        transition: color 0.3s;
+
+        &:hover{
+            color: colors.$accent;
+        }
+
+        &--active {
+            color: colors.$accent;
+        }
+    }
+}

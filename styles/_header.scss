@@ -5,8 +5,14 @@
 .header {
     position: relative;
     z-index: 1;
-    @include flex(stretch, flex-start, 0, column);
-    background: colors.$grad-supersoft;
+    @include flex(stretch, center, 0, column);
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
 
     &::before {
         content: "";
@@ -16,39 +22,25 @@
         transform: translateX(-50%);
         width: 100%;
         height: 100%;
-        z-index: 0;
+        z-index: -1;
         pointer-events: none;
-
-        background-image: url('../images/Symbol.svg');
+        background-image: url("../images/Symbol.svg");
         background-repeat: no-repeat;
         background-position: top center;
         background-size: auto 600px;
-
-        @include media("tabletsd") {
-            background-size: auto 1024px;
-        }
-
-        @include media("tablethd") {
-            background-size: auto 768px;
-        }
-
-        @include media ("desktopsd") {
-            background-size: auto 799px;
-        }
-
-        @include media ("desktophd") {
-            background-size: auto 1000px;
-        }
-
     }
 
+    &__menu {
+        @include flex(stretch, space-between, 0, column);
+    }
 
     &__top {
+        background: rgba(245, 245, 250, 0.20);
+        padding: 10px 15px 10px 15px;
+        @include flex(center, space-between, 0);
         position: relative;
         z-index: 1;
-        padding: 10px 15px;
-        background: rgba(245, 245, 250, 0.20);
-        @include flex(center, space-between);
+        align-self: stretch;
     }
 
     &__lang {
@@ -62,83 +54,176 @@
         color: #fff;
         @include font-style(12px, 700);
 
+        &:hover {
+            background: colors.$accent;
+        }
+
         &--active {
             background: colors.$accent;
         }
     }
 
-    &__phone {
-        @include flex(center, flex-start, 0);
+    &__contacts {
+        @include flex(center, center, 0);
     }
 
-    &__link {
-        @include font-style(16px, 700);
-        transition: color 0.3s ease;
-        text-decoration: none;
+    &__geo {
+        display: none;
+    }
+
+    &__number {
         color: #fff;
+        @include font-style(16px, 700);
+        text-decoration: none;
+    }
+
+    &__messanger {
+        display: none;
     }
 
     &__down {
+        padding: 15px 15px 10px 15px;
         position: relative;
         z-index: 1;
-        padding: 15px 15px 10px;
-        @include flex(center, space-between);
+        @include flex(flex-start, space-between);
     }
 
     &__logo {
-        @include flex(center, flex-start, 4px);
+        @include flex(flex-start, center, 4px);
+        text-decoration: none;
 
         &-svg {
-            display: block;
-            margin: 0;
             width: 70px;
+            height: 32px;
+            color: #fff;
         }
     }
 
     &__decoration {
-        @include flex(center, flex-start, 0);
+        width: 12px;
+        height: 26px;
+
+    }
+
+    &__hamburger {
+        @include flex(center, center);
+        border-radius: 8px;
+        background: none;
+        cursor: pointer;
+
+        &:active {
+            background-color: colors.$gray-separator;
+        }
 
         &-svg {
+            width: 32px;
+            height: 32px;
             display: block;
-            margin: 0;
-            width: 12px;
+            color: #fff;
         }
     }
 
     &__pages-title {
         color: #fff;
-        @include font-style(20px, 400)
+        line-height: 1;
+        @include font-style(20px, 400);
     }
 
-    &__burger {
-        @include flex(center, flex-start, 0);
-
-        &-btn {
-            border-radius: 8px;
-            background: none;
-            cursor: pointer;
-
-            &:active {
-                background-color: colors.$gray-separator;
-            }
-        }
-
+    &__nav {
+        display: none;
     }
 
     &__hero {
-        position: relative;
-        z-index: 1;
         margin-top: 130px;
-        @include flex(center, center, 0, column);
+        margin-bottom: 24px;
+        @include flex(center, center, 160px, column);
+
     }
 
     &__title {
-        @include font-style(40px, 700);
         color: #fff;
         text-align: center;
+        @include font-style(38px, 700);
+        margin: 0 30px;
     }
 
-    &__scroll {
-        margin: 160px 0 11px 0;
+    &__arrow-svg {
+        width: 42px;
+        height: 42px;
+        cursor: pointer;
+        color: #fff;
+
+        &:hover {
+            color: colors.$accent;
+            opacity: 1;
+        }
+    }
+
+    .header__nav-mobile {
+        @include flex(stretch, center, 8px, column);
+
+        .header__nav-link {
+            display: block;
+            padding: 12px;
+            text-align: center;
+            background-color: #F5F5FA;
+            border-radius: 12px;
+            color: #24A3D9;
+            text-decoration: none;
+            @include font-style(24px, 700);
+
+            &:hover {
+                color: colors.$accent;
+            }
+
+            &--active {
+                color: colors.$accent;
+            }
+        }
+    }
+
+}
+
+.offcanvas-backdrop {
+    &.show {
+        background-color: #323264;
+        opacity: 0.7 !important;
+    }
+}
+
+.offcanvas {
+    padding: 12px;
+    &.offcanvas-end {
+        width: calc(100% - 16px) !important;
+        max-width: 360px;
+        left: 50% !important;
+        right: auto !important;
+        top: 30% !important;
+        bottom: auto !important;
+        transform: translate(-50%, -50%) !important;
+        border-radius: 12px !important;
+        height: auto !important;
+        border: none !important;
+
+        .offcanvas-header {
+            padding: 12px 12px 12px;
+            display: flex;
+            justify-content: flex-end;
+
+            .btn-close {
+                border-radius: 8px;
+                padding: 12px;
+                opacity: 1;
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23F0145A'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") !important;
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .offcanvas-body {
+            padding: 12px 12px 24px;
+        }
     }
 }
