@@ -308,7 +308,7 @@ a:hover {
   max-width: 360px;
   left: 50% !important;
   right: auto !important;
-  top: 30% !important;
+  top: 50% !important;
   bottom: auto !important;
   transform: translate(-50%, -50%) !important;
   border-radius: 12px !important;
