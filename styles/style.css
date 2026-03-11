@@ -358,7 +358,8 @@ a:hover {
   padding: 0;
   list-style: none;
 }
-.main h1 {
+.main h1,
+.main p {
   margin: 0;
   padding: 0;
 }
@@ -406,7 +407,7 @@ a:hover {
 .main__scroll-item--active {
   color: #F0145A;
 }
-.main__cont {
+.main__content {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -437,7 +438,7 @@ a:hover {
   line-height: 30px;
   color: #fff;
 }
-.main__content {
+.main__contentservice {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -474,4 +475,42 @@ a:hover {
   font-size: 30px;
   font-weight: 700;
   line-height: normal;
+}
+.main__group {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.main__group-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 15px;
+  flex-direction: column;
+}
+.main__card-svg {
+  background-color: #fff;
+  border-radius: 24px;
+}
+.main__card-title {
+  margin-top: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: normal;
+  color: #24A3FF;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.main__card-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+  line-height: 26px;
 }/*# sourceMappingURL=style.css.map */

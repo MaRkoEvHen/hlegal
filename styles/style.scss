@@ -26,7 +26,9 @@
         padding: 0;
         list-style: none;
     }
-    h1{
+
+    h1,
+    p {
         margin: 0;
         padding: 0;
     }
@@ -73,7 +75,7 @@
         }
     }
 
-    &__cont {
+    &__content {
         @include flex(flex-start, center, 0, column);
         padding: 30px 30px 0 0;
     }
@@ -93,9 +95,10 @@
             color: #fff;
         }
     }
-    &__content{
-     @include flex(flex-start, flex-start, 0, column);
-    padding: 30px 0 0 0;
+
+    &__contentservice {
+        @include flex(flex-start, flex-start, 0, column);
+        padding: 30px 0 0 0;
     }
 
     &__service {
@@ -116,5 +119,31 @@
         &-title {
             @include font-style(30px, 700);
         }
+    }
+
+    &__group {
+        margin-top: 30px;
+        @include flex(center, flex-start, 30px);
+        flex-wrap: wrap;
+
+        &-card {
+            @include flex(flex-start, center, 15px, column);
+        }
+    }
+    &__card-svg{
+        background-color:#fff ;
+        border-radius: 24px;
+    }
+    &__card-title{
+        margin-top: 15px;
+        @include font-style(23px, 700);
+        color: colors.$active-reg;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    &__card-text{
+        @include font-style(16px, 400);
+        color: #fff;
+        line-height: 26px;
     }
 }
