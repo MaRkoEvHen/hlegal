@@ -15,8 +15,37 @@
 
 .wrapper {
     @include flex(stretch, flex-start, 0, column);
-    background: colors.$grad-supersoft;
+    &__bg{
+        position: relative;
+        z-index: 3;
+        background: colors.$grad-supersoft;
+        border-radius: 0 0 12px 12px;
+
+&::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            bottom: -10px;
+            left: 20px;
+            right: 20px;
+            height: 10px;
+            background: #CACADB;
+            border-radius: 0 0 12px 12px;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: -2; 
+            bottom: -20px;
+            left: 40px;  
+            right: 40px;
+            height: 10px;
+            background: #E7E7F2;
+            border-radius: 0 0 12px 12px;
+        }
+    }
 }
+
 
 .main {
     padding: 30px 0 60px 30px;
@@ -133,6 +162,7 @@
     &__card-svg{
         background-color:#fff ;
         border-radius: 24px;
+        padding: 14px;
     }
     &__card-title{
         margin-top: 15px;
