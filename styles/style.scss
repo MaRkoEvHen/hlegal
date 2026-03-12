@@ -15,13 +15,14 @@
 
 .wrapper {
     @include flex(stretch, flex-start, 0, column);
-    &__bg{
+
+    &__bg {
         position: relative;
         z-index: 3;
         background: colors.$grad-supersoft;
         border-radius: 0 0 12px 12px;
 
-&::before {
+        &::before {
             content: "";
             position: absolute;
             z-index: -1;
@@ -32,12 +33,13 @@
             background: #CACADB;
             border-radius: 0 0 12px 12px;
         }
+
         &::after {
             content: "";
             position: absolute;
-            z-index: -2; 
+            z-index: -2;
             bottom: -20px;
-            left: 40px;  
+            left: 40px;
             right: 40px;
             height: 10px;
             background: #E7E7F2;
@@ -159,21 +161,27 @@
             @include flex(flex-start, center, 15px, column);
         }
     }
-    &__card-svg{
-        background-color:#fff ;
+
+    &__card-svg {
+        background-color: #fff;
         border-radius: 24px;
         padding: 14px;
     }
-    &__card-title{
+
+    &__card-title {
         margin-top: 15px;
         @include font-style(23px, 700);
         color: colors.$active-reg;
         padding-bottom: 0;
         margin-bottom: 0;
     }
-    &__card-text{
+
+    &__card-text {
         @include font-style(16px, 400);
         color: #fff;
         line-height: 26px;
     }
+}
+.footer{
+    margin-top: 50px;
 }
