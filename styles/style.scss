@@ -237,10 +237,12 @@
         background: none;
         color: colors.$active-reg;
         opacity: 0.2;
-    &--active{
-        color: colors.$active-reg;
-        opacity: 1;
-    }
+
+        &--active {
+            color: colors.$active-reg;
+            opacity: 1;
+        }
+
         &:hover {
             color: colors.$active-reg;
             opacity: 1;
@@ -248,50 +250,107 @@
         }
     }
 }
-.footer{
+
+.footer {
     margin-top: 60px;
     @include flex(stretch, center, 0, column);
 
-    &__partners{
-    @include flex(stretch, center, 0, column);
-    &-title{
-        text-align: center;
-        color: colors.$main-reg;
-        @include font-style(14px,700);
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-    &-hillel{
-        margin-top: 30px;
-        background-color: #1C4280;
-        @include flex(stretch, center, 0);
-        padding: 36px 0;
-    }
-        &-wanna{
-        background-color: #143646;
-        @include flex(stretch, center, 0);
-        padding: 44px 0;
-    }
-        &-tap{
-        background-color: #F48B30;
-        @include flex(stretch, center, 0);
-        padding: 38px 0;
-    }
-        &-3d{
-        background-color: #9E4DC3;
-        @include flex(stretch, center, 0);
-        padding: 39px 0;
-    }
-        &-orangear{
-        background-color: #F48B30;
-        @include flex(stretch, center, 0);
-        padding: 38px 0;
-    }
-        &-adtelligent{
-        background-color: #E2E2E4;
-        @include flex(stretch, center, 0);
-        padding: 36px 0;
-    }
+    &__partners {
+        @include flex(stretch, center, 0, column);
+
+        &-title {
+            text-align: center;
+            color: colors.$main-reg;
+            @include font-style(14px, 700);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        &-hillel {
+            margin-top: 30px;
+            background-color: #1C4280;
+            @include flex(stretch, center, 0);
+            padding: 36px 0;
+        }
+
+        &-wanna {
+            background-color: #143646;
+            @include flex(stretch, center, 0);
+            padding: 44px 0;
+        }
+
+        &-tap {
+            background-color: #F48B30;
+            @include flex(stretch, center, 0);
+            padding: 38px 0;
+        }
+
+        &-3d {
+            background-color: #9E4DC3;
+            @include flex(stretch, center, 0);
+            padding: 39px 0;
+        }
+
+        &-orangear {
+            background-color: #F48B30;
+            @include flex(stretch, center, 0);
+            padding: 38px 0;
+        }
+
+        &-adtelligent {
+            background-color: #E2E2E4;
+            @include flex(stretch, center, 0);
+            padding: 36px 0;
+        }
 
     }
+
+    &__publications {
+        margin: 30px;
+
+        &-btn {
+            @include flex(center, center, 2px);
+            background: none;
+            @include font-style(14px, 700);
+            color: colors.$active-reg;
+
+            &:hover {
+                color: colors.$accent;
+                transition: color 0.3s ease;
+            }
+        }
+        &-hero{
+            margin-top: 5px;
+            @include font-style(30px, 700);
+            margin-bottom: 0;
+        }
+        &-img{
+            margin-top: 30px;
+            height: 200px;
+        }
+        &-description{
+            margin: 30px;
+            @include flex(flex-start, center, 15px,column);
+        }
+    }
+    .description__title{
+            color: colors.$active-reg;
+            margin-bottom: 0;
+    }
+    .description__date{
+        @include font-style(12px, 700);
+        color: colors.$gray-text;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding-bottom: 15px;
+        border-bottom: 4px solid    colors.$gray-separator;
+        align-self: stretch;
+
+    }
+    .description__exposition{
+        @include font-style(14px, 400);
+        line-height: 22px;
+        margin-bottom: 0;
+    }
+
 }
