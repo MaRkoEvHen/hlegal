@@ -254,6 +254,7 @@
 .footer {
     margin-top: 60px;
     @include flex(stretch, center, 0, column);
+    background: colors.$gray-bg;
 
     &__partners {
         @include flex(stretch, center, 0, column);
@@ -329,8 +330,9 @@
             height: 200px;
         }
         &-description{
-            margin: 30px;
+            padding: 30px;
             @include flex(flex-start, center, 15px,column);
+            background-color: #fff;
         }
     }
     .description__title{
