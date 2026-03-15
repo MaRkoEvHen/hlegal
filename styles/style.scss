@@ -260,15 +260,17 @@
         @include flex(stretch, center, 0, column);
 
         &-title {
+            background-color: #fff;
             text-align: center;
             color: colors.$main-reg;
             @include font-style(14px, 700);
             letter-spacing: 1px;
             text-transform: uppercase;
+            padding-bottom: 30px;
+            margin-bottom: 0;
         }
 
         &-hillel {
-            margin-top: 30px;
             background-color: #1C4280;
             @include flex(stretch, center, 0);
             padding: 36px 0;
