@@ -322,39 +322,106 @@
                 transition: color 0.3s ease;
             }
         }
-        &-hero{
+
+        &-hero {
             margin-top: 5px;
             @include font-style(30px, 700);
             margin-bottom: 0;
         }
-        &-img{
+
+        &-img {
             margin-top: 30px;
             height: 200px;
         }
-        &-description{
+
+        &-description {
             padding: 30px;
-            @include flex(flex-start, center, 15px,column);
+            @include flex(flex-start, center, 15px, column);
             background-color: #fff;
         }
     }
-    .description__title{
-            color: colors.$active-reg;
-            margin-bottom: 0;
+
+    .description__title {
+        color: colors.$active-reg;
+        margin-bottom: 0;
     }
-    .description__date{
+
+    .description__date {
         @include font-style(12px, 700);
         color: colors.$gray-text;
         letter-spacing: 1px;
         text-transform: uppercase;
         padding-bottom: 15px;
-        border-bottom: 4px solid    colors.$gray-separator;
+        border-bottom: 4px solid colors.$gray-separator;
         align-self: stretch;
 
     }
-    .description__exposition{
+
+    .description__exposition {
         @include font-style(14px, 400);
         line-height: 22px;
         margin-bottom: 0;
     }
 
+    &__end {
+        border-top: 2px solid colors.$gray-separator;
+        margin: 30px;
+        @include flex(stretch, center, 0, column);
+
+        &-up {
+            margin-top: 30px;
+            @include flex(center, center, 0, column);
+        }
+
+        &-down {
+            margin-top: 20px;
+            @include flex(center, center, 10px, column);
+        }
+
+        &-end {
+            @include font-style(16px, 400);
+            color: colors.$gray-text;
+            margin-top: 30px; 
+            @include flex(center, center, 0);
+            margin-bottom: 0;
+        }
+    }
+
+}
+
+.up__street {
+    @include font-style(14px, 400);
+    line-height: 22px;
+    margin-bottom: 0;
+}
+
+.up__geo {
+    margin-top: 10px;
+    background: none;
+    @include font-style(12px, 700);
+    color: colors.$active-reg;
+
+    &:hover {
+        color: colors.$accent;
+        transition: color 0.3s ease;
+    }
+}
+.down__svg{
+    width: 39px;
+    height: 39px; 
+    color: colors.$active-reg;
+    &:hover {
+        color: colors.$accent;
+        transition: color 0.3s ease;
+    }
+}
+.down__number{
+    text-decoration: none;
+    color: colors.$main-alt;
+}
+.down__email{
+    @include font-style(16px, 700);
+    color: colors.$active-reg;
+    cursor: pointer;
+    margin-bottom: 0;
 }
